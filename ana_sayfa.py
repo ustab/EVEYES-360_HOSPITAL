@@ -2,11 +2,39 @@ import random
 import time
 from datetime import datetime
 import streamlit as st
-# Sayfa Ayarları
-st.set_page_config(page_title="EVEYES 360 -HASTANE1", layout="wide")
 
-st.title("🛡️""EVEYES 360 -HASTANE1")
+# Sayfa Ayarları
+st.set_page_config(page_title="EVEYES 360 - HOSPITAL", layout="wide")
+
+# ANA BAŞLIK
+st.title("🛡️ EVEYES 360 - HASTANE YÖNETİM MERKEZİ")
 st.markdown("---")
+
+# HIZLI ERİŞİM BUTONLARI (Ana ekranda bölümleri göstermek için)
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.subheader("📝 Kayıt Kabul")
+    st.write("Yeni hasta girişi ve dil seçimi.")
+    if st.button("Kayıt Ekranına Git"):
+        st.switch_page("pages/1_📝_Kayit_Kabul.py")
+
+with col2:
+    st.subheader("📂 Arşiv")
+    st.write("LegalVault şifreli kayıtlar.")
+    if st.button("Arşivi Görüntüle"):
+        st.switch_page("pages/2_📂_Hasta_Arsivi.py")
+
+with col3:
+    st.subheader("🔬 Laboratuvar")
+    st.write("Mizaç ve Makam analizleri.")
+    # Henüz oluşturmadıysan bile butonu hazır tutalım
+    if st.button("Analiz Paneline Git"):
+        st.info("Laboratuvar modülü hazırlanıyor...")
+
+# MEVCUT DASHBOARD (Senin paylaştığın ekran görüntüsündeki bölüm)
+st.header("📊 Canlı Klinik Dashboard")
+# ... Buraya senin önceki "Hayati Bulgular" ve "Biosonoloji" kodların gelecek
 
 # Yan Menü (Sidebar) - Kayıt ve Seçenekler
 with st.sidebar:
@@ -382,4 +410,5 @@ def run_clinical_test():
         print("="*50)
 
 if __name__ == "__main__":
+
     run_clinical_test()
