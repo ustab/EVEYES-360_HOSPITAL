@@ -2,7 +2,9 @@ import streamlit as st
 
 st.set_page_config(page_title="Kayıt Kabul - EVEYES 360", layout="wide")
 st.title("📝 Hasta Kayıt Kabul ve Karşılama")
-
+# Eğer hasta listesi henüz oluşturulmadıysa boş bir liste tanımla
+if 'hasta_listesi' not in st.session_state:
+    st.session_state['hasta_listesi'] = []
 with st.container():
     col1, col2 = st.columns(2)
     with col1:
