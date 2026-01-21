@@ -7,22 +7,22 @@ import streamlit as st
 st.set_page_config(page_title="EVEYES 360 - HOSPITAL", layout="wide")
 
 # ANA BAŞLIK
-st.title("🛡️ EVEYES 360 - HASTANE YÖNETİM MERKEZİ")
+st.title("🛡️ EVEYES 360 - DR OFIS PANELI")
 st.markdown("---")
 
 # HIZLI ERİŞİM BUTONLARI (Ana ekranda bölümleri göstermek için)
-col1, col2, col3 = st.columns(3)
+col1, col2, col3, col4, col5, col6,   = st.columns(3)
 
 with col1:
-    st.subheader("📝 Kayıt Kabul")
+    st.subheader("📝 Patient List")
     st.write("Yeni hasta girişi ve dil seçimi.")
     if st.button("Kayıt Ekranına Git"):
         st.switch_page("pages/1_📝_Kayit_Kabul.py")
 
 with col2:
-    st.subheader("📂 Arşiv")
+    st.subheader("📂 Archive")
     st.write("LegalVault şifreli kayıtlar.")
-    if st.button("Arşivi Görüntüle"):
+    if st.button("Open Archive"):
         st.switch_page("pages/2_📂_Hasta_Arsivi.py")
 
 with col3:
@@ -33,7 +33,7 @@ with col3:
         st.info("Laboratuvar modülü hazırlanıyor...")
 
 # MEVCUT DASHBOARD (Senin paylaştığın ekran görüntüsündeki bölüm)
-st.header("📊 Canlı Klinik Dashboard")
+st.header("📊 Live Dashboard")
 # ... Buraya senin önceki "Hayati Bulgular" ve "Biosonoloji" kodların gelecek
 
 # Yan Menü (Sidebar) - Kayıt ve Seçenekler
@@ -412,3 +412,4 @@ def run_clinical_test():
 if __name__ == "__main__":
 
     run_clinical_test()
+
