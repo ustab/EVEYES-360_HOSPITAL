@@ -3,9 +3,9 @@ import time
 from datetime import datetime
 import streamlit as st
 # Sayfa Ayarları
-st.set_page_config(page_title="EVEYES 360 -HASTANE1", layout="wide")
+st.set_page_config(page_title="EVEYES 360 -HOSPITAL", layout="wide")
 
-st.title("🛡️""EVEYES 360 -HASTANE1")
+st.title("🛡️""EVEYES 360 -HOSPITAL")
 st.markdown("---")
 
 # Yan Menü (Sidebar) - Kayıt ve Seçenekler
@@ -383,4 +383,5 @@ def run_clinical_test():
 
 if __name__ == "__main__":
     run_clinical_test()
+
 
